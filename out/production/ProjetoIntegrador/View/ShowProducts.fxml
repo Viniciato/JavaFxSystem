@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="showProductsWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="808.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ShowProductsController">
+   <children>
+      <TableView id="table-view" fx:id="tableProducts" layoutX="27.0" layoutY="117.0" prefHeight="298.0" prefWidth="754.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn editable="false" maxWidth="213.0" prefWidth="205.0" resizable="false" text="Nome" />
+            <TableColumn maxWidth="366.0" prefWidth="239.0" resizable="false" text="Categoria" />
+            <TableColumn maxWidth="487.0" prefWidth="91.0" resizable="false" text="Preço" />
+            <TableColumn maxWidth="603.0" prefWidth="217.0" resizable="false" text="Descrição" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="153.0" layoutY="67.0" prefHeight="39.0" prefWidth="526.0" styleClass="backgroundHboxWhite">
+         <children>
+            <TextField fx:id="searchProduct" alignment="CENTER" layoutX="152.0" layoutY="65.0" promptText="Procurar Produto">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <ComboBox fx:id="choiceCategory" layoutX="340.0" layoutY="65.0" onAction="#listWithCategory" prefHeight="27.0" prefWidth="185.0" promptText="Listar Por Categoria">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Button layoutX="533.0" layoutY="65.0" mnemonicParsing="false" onAction="#listAll" prefHeight="27.0" prefWidth="145.0" styleClass="buttonConclude" text="Listar Todos" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="319.0" layoutY="14.0" text="Produtos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

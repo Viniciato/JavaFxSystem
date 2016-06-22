@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="548.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageCitiesController">
+   <children>
+      <TableView id="table-view" fx:id="citiesTable" layoutX="29.0" layoutY="84.0" prefHeight="200.0" prefWidth="493.0" stylesheets="@CSS/style.css">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn prefWidth="75.0" text="Nome" />
+            <TableColumn prefWidth="75.0" text="Sigla" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="323.0" layoutY="35.0" prefHeight="33.0" prefWidth="189.0" styleClass="backgroundHboxWhite">
+         <children>
+            <TextField fx:id="searchCity" alignment="CENTER" prefHeight="27.0" prefWidth="173.0" promptText="Procurar Cidade">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="39.0" layoutY="295.0">
+         <children>
+            <Button layoutX="37.0" layoutY="341.0" mnemonicParsing="false" onAction="#onNewCity" prefHeight="33.0" prefWidth="148.0" styleClass="buttonSave" text="Nova Cidade" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="198.0" layoutY="341.0" mnemonicParsing="false" onAction="#onEditCity" prefHeight="33.0" prefWidth="148.0" styleClass="buttonEdit" text="Editar Cidade" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="360.0" layoutY="341.0" mnemonicParsing="false" onAction="#onDeleteCity" prefHeight="33.0" prefWidth="148.0" styleClass="buttonRemove" text="Excluir Cidade" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="53.0" layoutY="12.0" text="Cidades" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="57.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

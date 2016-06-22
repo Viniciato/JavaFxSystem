@@ -1,0 +1,52 @@
+.background {
+    -fx-background-color: linear-gradient(from 0% 100% to 0% 100%, #373636 0%, #505050 100%);
+}
+
+.buttonSave {
+	    -fx-background-color:#32CD32;
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.buttonEdit {
+		    -fx-background-color: #FF8000;
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.buttonRemove {
+            -fx-background-color:#e60000;
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.buttonConclude {
+            -fx-background-color:#1E90FF;
+    -fx-background-radius: 6, 5;
+    -fx-background-insets: 0, 1;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );
+}
+
+.backgroundHboxWhite {
+	-fx-background-color: #fff;
+	-fx-background-radius: 5,4,3,5;
+}
+
+.backgroundHbox {
+    -fx-background-color: #36b8ee;
+    -fx-background-radius: 5,4,3,5;
+}
+
+.backgroundHbox2{
+	-fx-background-color: #fff;
+	-fx-background-radius: 5,4,3,5;
+}
+
+#table-view .table-column {
+  -fx-alignment: CENTER;
+}
+
+

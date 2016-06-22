@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="newOrderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="488.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewOrderController">
+   <children>
+      <Button layoutX="34.0" layoutY="347.0" mnemonicParsing="false" onAction="#saveOrder" prefHeight="27.0" prefWidth="402.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <VBox alignment="CENTER" layoutX="248.0" layoutY="84.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="77.0" layoutY="54.0" maxWidth="120.0" prefHeight="0.0" prefWidth="50.0" styleClass="backgroundHbox" />
+            <TableView id="table-view" fx:id="cardList" layoutX="41.0" layoutY="140.0" prefHeight="200.0" prefWidth="189.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Cartão" />
+               </columns>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox layoutX="42.0" layoutY="100.0" prefHeight="27.0" prefWidth="164.0">
+               <children>
+                  <TextField fx:id="cardField" alignment="CENTER" layoutX="42.0" layoutY="100.0" prefHeight="27.0" prefWidth="193.0" promptText="Procurar Cartão">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="128.0" layoutY="14.0" text="Novo Pedido" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="34.0" layoutY="84.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="77.0" layoutY="54.0" maxWidth="120.0" prefHeight="0.0" prefWidth="50.0" styleClass="backgroundHbox" />
+            <TableView id="table-view" fx:id="customerList" layoutX="41.0" layoutY="140.0" prefHeight="200.0" prefWidth="183.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Clientes" />
+               </columns>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox layoutX="42.0" layoutY="100.0">
+               <children>
+                  <TextField fx:id="customerField" alignment="CENTER" layoutX="42.0" layoutY="100.0" prefHeight="27.0" prefWidth="192.0" promptText="Procurar Cliente">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="134.0" layoutY="59.0" text="*Selecionar Um Cartão é Obrigatório!!" textFill="#c90808" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="251.0" prefWidth="450.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaveStateController">
+   <children>
+      <Label fx:id="title" layoutX="98.0" layoutY="14.0" text="Novo Estado" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <VBox layoutX="74.0" layoutY="82.0" prefHeight="92.0" prefWidth="306.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="89.0" layoutY="-122.0" prefHeight="39.0" prefWidth="285.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="89.0" layoutY="-122.0" prefHeight="29.0" prefWidth="81.0" text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="name" alignment="CENTER" layoutX="175.0" layoutY="-121.0" prefHeight="27.0" prefWidth="171.0" promptText="Nome Do Estado">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="95.0" layoutY="-79.0" prefHeight="39.0" prefWidth="285.0">
+               <children>
+                  <Label alignment="CENTER" layoutY="-41.0" prefHeight="29.0" prefWidth="81.0" text="Sigla:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="acronym" alignment="CENTER" layoutX="321.0" layoutY="-40.0" prefHeight="27.0" prefWidth="171.0" promptText="Sigla Do Estado">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="189.0" layoutY="185.0" mnemonicParsing="false" onAction="#onSave" prefHeight="27.0" prefWidth="171.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

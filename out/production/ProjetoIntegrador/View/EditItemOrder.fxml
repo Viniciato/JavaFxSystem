@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="534.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditItemOrderController">
+   <children>
+      <Label layoutX="73.0" layoutY="22.0" text="Editar Item do Pedido" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_RIGHT" layoutX="132.0" layoutY="79.0" prefHeight="66.0" prefWidth="272.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="129.0" layoutY="88.0" prefHeight="27.0" prefWidth="230.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="129.0" layoutY="90.0" prefHeight="22.0" prefWidth="105.0" text="Produto:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="productName" alignment="CENTER" editable="false" layoutX="226.0" layoutY="88.0" prefHeight="27.0" prefWidth="146.0" promptText="Produto" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="106.0" layoutY="127.0">
+               <children>
+                  <Label layoutX="129.0" layoutY="90.0" prefHeight="22.0" prefWidth="105.0" text="Quantidade:">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="amount" alignment="CENTER" layoutX="226.0" layoutY="88.0" prefHeight="27.0" prefWidth="146.0" promptText="Quantidade" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="253.0" layoutY="168.0" mnemonicParsing="false" onAction="#onSave" prefHeight="29.0" prefWidth="146.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

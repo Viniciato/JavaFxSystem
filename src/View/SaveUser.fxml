@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="477.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaveUserController">
+   <children>
+      <Label fx:id="title" layoutX="100.0" layoutY="23.0" text="Novo Usuário" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <VBox layoutX="98.0" layoutY="105.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="90.0" layoutY="102.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="90.0" layoutY="102.0" prefHeight="28.0" prefWidth="96.0" text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="name" alignment="CENTER" layoutX="217.0" layoutY="104.0" promptText="Nome Do Usuário">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="90.0" layoutY="140.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="90.0" layoutY="140.0" prefHeight="28.0" prefWidth="96.0" text="CPF:">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="cpf" alignment="CENTER" layoutX="217.0" layoutY="142.0" promptText="CPF Do Usuário">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="90.0" layoutY="184.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="90.0" layoutY="184.0" prefHeight="28.0" prefWidth="96.0" text="Salário:">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="salary" alignment="CENTER" layoutX="217.0" layoutY="187.0" promptText="Salário Do Usuário">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="90.0" layoutY="229.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="90.0" layoutY="229.0" prefHeight="28.0" prefWidth="96.0" text="Senha:">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="password" alignment="CENTER" layoutX="217.0" layoutY="231.0" promptText="Senha Do Usuário">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="68.0" layoutY="270.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="68.0" layoutY="270.0" prefHeight="28.0" prefWidth="96.0" text="Acesso:">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="access" alignment="CENTER" layoutX="217.0" layoutY="272.0" promptText="Acesso Do Usuário">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="127.0" layoutY="74.0" text="*Todos os Campos Sao Obrigatórios" textFill="#cd1010" />
+      <Button layoutX="210.0" layoutY="323.0" mnemonicParsing="false" onAction="#onSave" prefHeight="29.0" prefWidth="167.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

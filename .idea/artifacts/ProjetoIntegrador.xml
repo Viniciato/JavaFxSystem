@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="ProjetoIntegrador">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjetoIntegrador</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Controller.MainController" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="paramFile" value="" />
+        <option name="title" value="Teste" />
+        <option name="vendor" value="Test" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="ProjetoIntegrador.jar">
+        <element id="module-output" name="ProjetoIntegrador" />
+      </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/mysql-connector-java-5.1.37-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

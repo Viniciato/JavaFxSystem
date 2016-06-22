@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="450.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaveCategoryController">
+   <children>
+      <Label fx:id="title" layoutX="66.0" layoutY="14.0" text="Nova Categoria" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="75.0" layoutY="79.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="35.0" layoutY="-152.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="82.0" layoutY="-152.0" prefHeight="29.0" prefWidth="120.0" text="Nome:">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="name" alignment="CENTER" layoutX="178.0" layoutY="-151.0" prefHeight="27.0" prefWidth="156.0" promptText="Nome Da Categoria">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="35.0" layoutY="-110.0">
+               <children>
+                  <Label layoutX="35.0" layoutY="-110.0" prefHeight="29.0" prefWidth="120.0" text="Descriçao:">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="description" alignment="CENTER" layoutX="178.0" layoutY="-108.0" prefHeight="27.0" prefWidth="156.0" promptText="Descrição">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="204.0" layoutY="192.0" mnemonicParsing="false" onAction="#onSave" prefHeight="27.0" prefWidth="167.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

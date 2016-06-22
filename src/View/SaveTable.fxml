@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="450.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaveTableController">
+   <children>
+      <Label fx:id="title" layoutX="124.0" layoutY="14.0" text="Nova Mesa" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <VBox layoutX="91.0" layoutY="78.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="72.0" layoutY="-101.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="97.0" layoutY="-101.0" prefHeight="29.0" prefWidth="114.0" text="Nome:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="name" alignment="CENTER" layoutX="187.0" layoutY="-100.0" prefHeight="27.0" prefWidth="157.0" promptText="Nome Da Mesa">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="72.0" layoutY="-61.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="72.0" layoutY="-61.0" prefHeight="29.0" prefWidth="114.0" text="Lugares:">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="places" alignment="CENTER" layoutX="187.0" layoutY="-60.0" prefHeight="27.0" prefWidth="157.0" promptText="Quantidade Lugares">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="219.0" layoutY="187.0" mnemonicParsing="false" onAction="#onSave" prefHeight="27.0" prefWidth="157.0" styleClass="buttonSave" text="Salvar" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

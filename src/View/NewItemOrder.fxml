@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="604.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewItemOrderController">
+   <children>
+      <Label layoutX="158.0" layoutY="7.0" prefHeight="41.0" prefWidth="284.0" text="Adicionar Produto" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="35.0" layoutY="318.0">
+         <children>
+            <TextField fx:id="productAmount" alignment="CENTER" layoutX="46.0" layoutY="316.0" prefHeight="27.0" prefWidth="120.0" promptText="Quantidade">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button layoutX="187.0" layoutY="316.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="27.0" prefWidth="178.0" styleClass="buttonSave" text="Adicionar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/add.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="383.0" layoutY="316.0" mnemonicParsing="false" onAction="#onConclued" prefHeight="27.0" prefWidth="178.0" styleClass="buttonConclude" stylesheets="@CSS/style.css" text="Concluir" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/check.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <TableView id="table-view" fx:id="products" layoutX="31.0" layoutY="107.0" prefHeight="201.0" prefWidth="538.0">
+        <columns>
+          <TableColumn prefWidth="93.0" text="Nome" />
+          <TableColumn prefWidth="113.0" text="Categoria" />
+            <TableColumn prefWidth="75.0" text="Valor Unitario" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="35.0" layoutY="54.0" prefHeight="41.0" prefWidth="536.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="34.0" layoutY="66.0" prefHeight="41.0" prefWidth="290.0">
+               <children>
+                  <TextField fx:id="productName" alignment="CENTER" layoutX="34.0" layoutY="66.0" prefHeight="27.0" prefWidth="284.0" promptText="Procurar Produto">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </HBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <HBox alignment="CENTER" layoutX="295.0" layoutY="66.0" prefHeight="41.0" prefWidth="192.0">
+               <children>
+                  <ComboBox fx:id="categories" layoutX="295.0" layoutY="66.0" onAction="#onSeachCategory" prefHeight="27.0" prefWidth="199.0" promptText="Procurar Por Categoria" />
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

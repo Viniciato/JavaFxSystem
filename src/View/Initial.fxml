@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="885.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InitialController">
+   <children>
+      <HBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <MenuBar minWidth="-Infinity" prefHeight="29.0" prefWidth="335.0" HBox.hgrow="ALWAYS">
+              <menus>
+                  <Menu mnemonicParsing="false" text="Pedidos">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onShowOtherOrders" text="Outros Pedidos" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Clientes">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onNewCustomer" text="Cadastrar Cliente" />
+                        <MenuItem mnemonicParsing="false" onAction="#onShowCustomers" text="Listar Clientes" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Produtos">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onShowAllProducts" text="Listar Produtos" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="manager" mnemonicParsing="false" text="Gerente" visible="false">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Produtos">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onManageProducts" text="Gerenciar Produtos" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Mesas">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onManageTables" text="Gerenciar Mesas" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Categorias">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onManageCategories" text="Gerenciar Categorias" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Cidades">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onManageCities" text="Gerenciar Cidades" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Estados">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#onManageStates" text="Gerenciar Estados" />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+                  <Menu fx:id="adm" mnemonicParsing="false" text="Administrador" visible="false">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onManagerUsers" text="Gerenciar Usuarios" />
+                     </items>
+                  </Menu>
+              </menus>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </MenuBar>
+            <MenuBar fx:id="userMenuBar" layoutX="719.0" maxWidth="190.0" minWidth="-Infinity" prefHeight="29.0" HBox.hgrow="SOMETIMES">
+              <menus>
+                <Menu fx:id="userMenu" mnemonicParsing="false" text="UserName">
+                  <items>
+                        <MenuItem fx:id="OptionsButton" mnemonicParsing="false" text="Opções" />
+                        <MenuItem fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="43.0" layoutY="35.0" prefHeight="453.0" prefWidth="801.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="35.0">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Pedidos Em Aberto">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="403.0" styleClass="backgroundHboxWhite" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button layoutX="42.0" layoutY="64.0" mnemonicParsing="false" onAction="#onNewOrder" prefHeight="27.0" prefWidth="161.0" styleClass="buttonSave" text="Novo Pedido" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@IMGS/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Button layoutX="223.0" layoutY="64.0" mnemonicParsing="false" onAction="#onEditOrder" prefHeight="27.0" prefWidth="161.0" styleClass="buttonEdit" text="Editar Pedido" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@IMGS/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView id="table-view" fx:id="ordersPanel" layoutX="42.0" layoutY="127.0" prefHeight="321.0" prefWidth="801.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="127.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn editable="false" maxWidth="1000.0" minWidth="60.0" prefWidth="60.0" text="Comanda" />
+                <TableColumn fx:id="mesas" editable="false" maxWidth="3000.0" minWidth="5.0" prefWidth="50.0" text="Mesa(s)" />
+                  <TableColumn editable="false" maxWidth="4000.0" prefWidth="120.0" text="Cliente" />
+                  <TableColumn editable="false" maxWidth="4000.0" prefWidth="120.0" text="Data" />
+                  <TableColumn editable="false" maxWidth="2000.0" prefWidth="103.0" text="Total" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER" prefHeight="19.0" prefWidth="801.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="323.0" layoutY="432.0" prefHeight="0.0" prefWidth="221.0" text="Gerenciador de Lanchonete Versão " textFill="WHITE">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="version" alignment="CENTER" layoutX="302.0" layoutY="446.0" prefHeight="0.0" prefWidth="19.0" text="1.0" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

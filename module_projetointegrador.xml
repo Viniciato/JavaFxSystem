@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_projetointegrador" default="compile.module.projetointegrador">
+  <dirname property="module.projetointegrador.basedir" file="${ant.file.module_projetointegrador}"/>
+  
+  <property name="module.jdk.home.projetointegrador" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.projetointegrador" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.projetointegrador" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.projetointegrador" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="projetointegrador.output.dir" value="${module.projetointegrador.basedir}/out/production/ProjetoIntegrador"/>
+  <property name="projetointegrador.testoutput.dir" value="${module.projetointegrador.basedir}/out/test/ProjetoIntegrador"/>
+  
+  <path id="projetointegrador.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="projetointegrador.module.production.classpath">
+    <path refid="${module.jdk.classpath.projetointegrador}"/>
+  </path>
+  
+  <path id="projetointegrador.runtime.production.module.classpath">
+    <pathelement location="${projetointegrador.output.dir}"/>
+  </path>
+  
+  <path id="projetointegrador.module.classpath">
+    <path refid="${module.jdk.classpath.projetointegrador}"/>
+    <pathelement location="${projetointegrador.output.dir}"/>
+  </path>
+  
+  <path id="projetointegrador.runtime.module.classpath">
+    <pathelement location="${projetointegrador.testoutput.dir}"/>
+    <pathelement location="${projetointegrador.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.projetointegrador">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.projetointegrador">
+    <patternset refid="excluded.from.module.projetointegrador"/>
+  </patternset>
+  
+  <path id="projetointegrador.module.sourcepath">
+    <dirset dir="${module.projetointegrador.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.projetointegrador" depends="compile.module.projetointegrador.production,compile.module.projetointegrador.tests" description="Compile module ProjetoIntegrador"/>
+  
+  <target name="compile.module.projetointegrador.production" depends="register.custom.compilers" description="Compile module ProjetoIntegrador; production classes">
+    <mkdir dir="${projetointegrador.output.dir}"/>
+    <javac2 destdir="${projetointegrador.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.projetointegrador}/javac">
+      <compilerarg line="${compiler.args.projetointegrador}"/>
+      <bootclasspath refid="projetointegrador.module.bootclasspath"/>
+      <classpath refid="projetointegrador.module.production.classpath"/>
+      <src refid="projetointegrador.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.projetointegrador"/>
+    </javac2>
+    
+    <copy todir="${projetointegrador.output.dir}">
+      <fileset dir="${module.projetointegrador.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.projetointegrador.tests" depends="register.custom.compilers,compile.module.projetointegrador.production" description="compile module ProjetoIntegrador; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.projetointegrador" description="cleanup module">
+    <delete dir="${projetointegrador.output.dir}"/>
+    <delete dir="${projetointegrador.testoutput.dir}"/>
+  </target>
+</project>

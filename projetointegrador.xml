@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="projeto" default="all">
+  
+  
+  <property file="projetointegrador.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.ear"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/packager.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="javafx-src.zip"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.mysql-connector-java-5.1.37-bin.classpath">
+    <pathelement location="${basedir}/mysql-connector-java-5.1.37-bin.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module ProjetoIntegrador -->
+  
+  <dirname property="module.projetointegrador.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.projetointegrador" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.projetointegrador" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.projetointegrador" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.projetointegrador" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="projetointegrador.output.dir" value="${module.projetointegrador.basedir}/out/production/ProjetoIntegrador"/>
+  <property name="projetointegrador.testoutput.dir" value="${module.projetointegrador.basedir}/out/test/ProjetoIntegrador"/>
+  
+  <path id="projetointegrador.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="projetointegrador.module.production.classpath">
+    <path refid="${module.jdk.classpath.projetointegrador}"/>
+    <path refid="library.mysql-connector-java-5.1.37-bin.classpath"/>
+  </path>
+  
+  <path id="projetointegrador.runtime.production.module.classpath">
+    <pathelement location="${projetointegrador.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.37-bin.classpath"/>
+  </path>
+  
+  <path id="projetointegrador.module.classpath">
+    <path refid="${module.jdk.classpath.projetointegrador}"/>
+    <pathelement location="${projetointegrador.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.37-bin.classpath"/>
+  </path>
+  
+  <path id="projetointegrador.runtime.module.classpath">
+    <pathelement location="${projetointegrador.testoutput.dir}"/>
+    <pathelement location="${projetointegrador.output.dir}"/>
+    <path refid="library.mysql-connector-java-5.1.37-bin.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.projetointegrador">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.projetointegrador">
+    <patternset refid="excluded.from.module.projetointegrador"/>
+  </patternset>
+  
+  <path id="projetointegrador.module.sourcepath">
+    <dirset dir="${module.projetointegrador.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.projetointegrador" depends="compile.module.projetointegrador.production,compile.module.projetointegrador.tests" description="Compile module ProjetoIntegrador"/>
+  
+  <target name="compile.module.projetointegrador.production" depends="register.custom.compilers" description="Compile module ProjetoIntegrador; production classes">
+    <mkdir dir="${projetointegrador.output.dir}"/>
+    <javac2 destdir="${projetointegrador.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.projetointegrador}/javac">
+      <compilerarg line="${compiler.args.projetointegrador}"/>
+      <bootclasspath refid="projetointegrador.module.bootclasspath"/>
+      <classpath refid="projetointegrador.module.production.classpath"/>
+      <src refid="projetointegrador.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.projetointegrador"/>
+    </javac2>
+    
+    <copy todir="${projetointegrador.output.dir}">
+      <fileset dir="${module.projetointegrador.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.projetointegrador.tests" depends="register.custom.compilers,compile.module.projetointegrador.production" description="compile module ProjetoIntegrador; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.projetointegrador" description="cleanup module">
+    <delete dir="${projetointegrador.output.dir}"/>
+    <delete dir="${projetointegrador.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.projetointegrador, clean.artifact.projetointegrador" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.projetointegrador" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.projetointegrador" value="${basedir}/out/artifacts/ProjetoIntegrador"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="artifact.temp.output.ProjetoIntegrador" value="${artifacts.temp.dir}/ProjetoIntegrador.jar"/>
+    <taskdef resource="com/sun/javafx/tools/ant/antlib.xml" uri="javafx:com.sun.javafx.tools.ant" classpath="${jdk.home.1.8}/lib/ant-javafx.jar"/>
+  </target>
+  
+  <target name="clean.artifact.projetointegrador" description="clean ProjetoIntegrador artifact output">
+    <delete dir="${artifact.output.projetointegrador}"/>
+  </target>
+  
+  <target name="artifact.projetointegrador" depends="init.artifacts, compile.module.projetointegrador" description="Build &#39;ProjetoIntegrador&#39; artifact" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <mkdir dir="${artifact.output.projetointegrador}"/>
+    <copy todir="${artifact.temp.output.ProjetoIntegrador}">
+      <fileset dir="${projetointegrador.output.dir}"/>
+    </copy>
+    <fx:fileset id="all_but_ProjetoIntegrador" dir="${artifact.temp.output.ProjetoIntegrador}" includes="**/*.jar">
+      <exclude name="ProjetoIntegrador.jar"/>
+    </fx:fileset>
+    <fx:fileset id="all_ProjetoIntegrador" dir="${artifact.temp.output.ProjetoIntegrador}" includes="**/*.jar"/>
+    <fx:application id="ProjetoIntegrador_id" name="ProjetoIntegrador" mainClass="Controller.MainController"/>
+    <fx:jar destfile="${artifact.temp.output.ProjetoIntegrador}/ProjetoIntegrador.jar">
+      <fx:application refid="ProjetoIntegrador_id"/>
+      <fileset dir="${artifact.temp.output.ProjetoIntegrador}" excludes="**/*.jar"/>
+      <fx:resources>
+        <fx:fileset refid="all_but_ProjetoIntegrador"/>
+      </fx:resources>
+      <manifest/>
+    </fx:jar>
+    <fx:deploy width="600" height="400" updatemode="background" outdir="${artifact.temp.output.ProjetoIntegrador}/deploy" outfile="ProjetoIntegrador">
+      <fx:application refid="ProjetoIntegrador_id"/>
+      <fx:info title="Teste" vendor="teteste" description="teste"/>
+      <fx:resources>
+        <fx:fileset refid="all_ProjetoIntegrador"/>
+      </fx:resources>
+    </fx:deploy>
+    <copy todir="${artifact.output.projetointegrador}">
+      <fileset dir="${artifact.temp.output.ProjetoIntegrador}/deploy"/>
+    </copy>
+    <delete includeemptydirs="true">
+      <fileset dir="${artifact.temp.output.ProjetoIntegrador}"/>
+    </delete>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.projetointegrador" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

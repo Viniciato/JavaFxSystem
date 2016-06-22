@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="525.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.NewCustomerController">
+   <children>
+      <Button layoutX="213.0" layoutY="363.0" mnemonicParsing="false" onAction="#saveCustomer" prefHeight="33.0" prefWidth="219.0" styleClass="buttonSave" text="Salvar Cliente" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@IMGS/check.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="128.0" layoutY="14.0" text="Novo Cliente" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="42.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="86.0" layoutY="101.0" prefHeight="240.0" prefWidth="356.0" styleClass="backgroundHboxWhite">
+         <children>
+            <HBox alignment="CENTER" layoutX="130.0" layoutY="114.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="130.0" layoutY="114.0" prefHeight="33.0" prefWidth="104.0" text="* Nome: ">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="name" alignment="CENTER" layoutX="222.0" layoutY="114.0" prefHeight="29.0" prefWidth="219.0" promptText="Digite o Nome do Cliente">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="137.0" layoutY="153.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="137.0" layoutY="153.0" prefHeight="33.0" prefWidth="104.0" text="CPF:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="cpf" alignment="CENTER" layoutX="222.0" layoutY="155.0" prefHeight="29.0" prefWidth="219.0" promptText="Digite o CPF do Cliente">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="129.0" layoutY="191.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="129.0" layoutY="191.0" prefHeight="33.0" prefWidth="104.0" text="E-Mail:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="email" alignment="CENTER" layoutX="222.0" layoutY="193.0" prefHeight="29.0" prefWidth="219.0" promptText="Digite o E-mail do Cliente">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="105.0" layoutY="232.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="105.0" layoutY="232.0" prefHeight="33.0" prefWidth="104.0" text="*Telefone:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="telephone" alignment="CENTER" layoutX="222.0" layoutY="234.0" prefHeight="29.0" prefWidth="219.0" promptText="Digite o Telefone do Cliente">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="105.0" layoutY="273.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="105.0" layoutY="273.0" prefHeight="33.0" prefWidth="104.0" text="*Estado:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="states" layoutX="222.0" layoutY="275.0" onAction="#onSelectState" prefHeight="29.0" prefWidth="219.0" promptText="Selecione o Estado">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <Separator layoutX="10.0" layoutY="159.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" prefHeight="43.0" prefWidth="383.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="105.0" layoutY="273.0" prefHeight="33.0" prefWidth="104.0" text="* Cidade:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="cities" layoutX="222.0" layoutY="275.0" prefHeight="29.0" prefWidth="219.0" promptText="Selecione a Cidade">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="158.0" layoutY="66.0" text="Campos com (*) sao obrigatórios!!" textFill="#d71a1a" />
+   </children>
+</AnchorPane>

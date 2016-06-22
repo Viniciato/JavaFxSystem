@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="window" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="540.0" styleClass="background" stylesheets="@CSS/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageTablesController">
+   <children>
+      <TableView id="table-view" fx:id="tables" layoutX="29.0" layoutY="88.0" prefHeight="200.0" prefWidth="483.0">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn prefWidth="118.0" text="Nome" />
+            <TableColumn prefWidth="157.0" text="Lugares" />
+            <TableColumn prefWidth="309.0" text="Status" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER" layoutX="306.0" layoutY="36.0" prefHeight="35.0" prefWidth="194.0" styleClass="backgroundHboxWhite">
+         <children>
+            <TextField fx:id="searchTable" alignment="CENTER" prefHeight="27.0" prefWidth="185.0" promptText="Procurar Mesa">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="79.0" layoutY="14.0" prefHeight="65.0" prefWidth="185.0" text="Mesas" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="57.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="56.0" layoutY="304.0">
+         <children>
+            <Button layoutX="125.0" layoutY="351.0" mnemonicParsing="false" onAction="#onNewTable" prefHeight="33.0" prefWidth="128.0" styleClass="buttonSave" text="Nova Mesa" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/add.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="278.0" layoutY="351.0" mnemonicParsing="false" onAction="#onEditTable" prefHeight="33.0" prefWidth="136.0" styleClass="buttonEdit" text="Editar Mesa" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="430.0" layoutY="351.0" mnemonicParsing="false" onAction="#onDeleteTable" prefHeight="33.0" prefWidth="136.0" styleClass="buttonRemove" text="Excluir Mesa" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@IMGS/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
